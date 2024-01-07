@@ -14,19 +14,20 @@ addChoreBtn.addEventListener('click', function () {
   }
 });
 // chore list
+// chore list
 choreList.addEventListener('change', function (event) {
   if (event.target.type == 'checkbox') {
-    const choreText = event.target.parentElement.textContent.trim();
+    const choreItem = event.target.parentElement;
     if (event.target.checked) {
-      choreText.classList.add('completed');
+      choreItem.classList.add('completed');
     } else {
-      choreText.classList.remove('completed');
+      choreItem.classList.remove('completed');
     }
   }
 });
 
 // deleting completed chores
-deleteCompletedBtn.addEventListener('click', function() {
- const completedChores = choreList.querySelectorAll('.completed');
- completedChores.forEach(chore => chore.remove());
+deleteCompletedBtn.addEventListener('click', function () {
+  const completedChores = choreList.querySelectorAll('.completed');
+  completedChores.forEach((chore) => chore.remove());
 });
